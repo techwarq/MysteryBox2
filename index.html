@@ -16,9 +16,9 @@
     </div>
     <div class="promo">
       <textarea id="messageInput" placeholder="Write your message"></textarea>
-      <div class="qrCodeBox" id="qrCodeBox" onchange="passMessage()"></div>
+      <div class="qrCodeBox" id="qrCodeBox"></div>
       <!-- Change the button to a link with an onclick event -->
-      <a href="#" class="submit" id="generateLink" onclick="generateQRCode()">Submit</a>
+      <a href="#" class="submit" id="generateLink" onclick="passMessage()">Submit</a>
     </div>
     <div class="box">
       <span></span>
@@ -32,12 +32,29 @@
   <script src="script.js"></script>
   <script>
     // Function to store the message and redirect to message.html
-    function passMessage() {
-      const messageInput = document.getElementById('messageInput').value;
-      sessionStorage.setItem('submittedMessage', messageInput);
-      window.location.href = 'https://techwarq.github.io/MysteryBox2/message.html';
-     
-    }
+    // Function to store the message and redirect to message.html
+function passMessage() {
+  const messageInput = document.getElementById('messageInput').value;
+  sessionStorage.setItem('submittedMessage', messageInput);
+
+  const linkUrl = 'https://techwarq.github.io/MysteryBox2/message.html';
+
+  // Call the function to print the clickable link
+  printClickableLink(linkUrl);
+}
+
+function printClickableLink(url) {
+  // Create a new anchor element
+  const linkElement = document.createElement('a');
+  linkElement.href = url;
+  linkElement.textContent = 'Click me'; // Set the text content of the link
+
+  // Append the link to the container on the page
+  const linkContainer = document.getElementById('linkContainer');
+  linkContainer.innerHTML = ''; // Clear previous content
+  linkContainer.appendChild(linkElement);
+}
+
   </script>
 </body>
 </html>
