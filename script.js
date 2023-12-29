@@ -7,7 +7,7 @@ function generateQRCode() {
     // Check if the message is not empty
     if (message.trim() !== '') {
         // Construct the URL for the message.html page
-        const url = 'https://techwarq.github.io/MysteryBox2/message.html';
+        const url = `https://techwarq.github.io/MysteryBox2/message.html?messageInput=${encodeURIComponent(message)}`;
 
         // Create a new QRCode instance
         const qrcode = new QRCode(document.getElementById('qrCodeBox'), {
