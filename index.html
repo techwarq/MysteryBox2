@@ -32,5 +32,12 @@
   <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
   <!-- Include your script.js file -->
   <script src="script.js"></script>
+  <script>
+    // Function to store the message and redirect to message.html
+    function passMessage() {
+      const messageInput = document.getElementById('messageInput').value;
+      sessionStorage.setItem('submittedMessage', messageInput);
+    }
+  </script>
 </body>
 </html>
