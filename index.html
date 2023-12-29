@@ -1,26 +1,24 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Christmas Present</title>
   <link rel="stylesheet" href="styles.css">
+  <title>CSS Christmas Present</title>
 </head>
 <body>
   
   <div class="present">
     <div class="lid">
       <span></span>
-    <div class="box-bowtie"></div>
+      <div class="box-bowtie"></div>
     </div>
     <div class="promo">
-        <textarea id="messageInput" placeholder="Write your message"></textarea>
-        <div class="qrCodeBox" id="qrCodeBox"></div>
-        <!-- Change the button to a link -->
-<a href="#" class="submit" id="generateLink" onclick="generateQRCode()">Submit</a>
-
-        <!-- Provide a container with the ID 'qrCodeBox' for the QR code -->
-        
+      <textarea id="messageInput" placeholder="Write your message"></textarea>
+      <div class="qrCodeBox" id="qrCodeBox"></div>
+      <!-- Change the button to a link with an onclick event -->
+      <a href="#" class="submit" id="generateLink" onclick="passMessage()">Submit</a>
     </div>
     <div class="box">
       <span></span>
@@ -37,7 +35,7 @@
     function passMessage() {
       const messageInput = document.getElementById('messageInput').value;
       sessionStorage.setItem('submittedMessage', messageInput);
-       window.location.href = `https://techwarq.github.io/MysteryBox2/message.html}`;
+      window.location.href = 'https://techwarq.github.io/MysteryBox2/message.html';
     }
   </script>
 </body>
