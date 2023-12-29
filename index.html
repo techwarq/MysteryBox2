@@ -35,9 +35,10 @@
     // Function to store the message and redirect to message.html
 function passMessage() {
   const messageInput = document.getElementById('messageInput').value;
-  sessionStorage.setItem('submittedMessage', messageInput);
+  localStorage.setItem('submittedMessage', messageInput);
   window.location.href = 'https://techwarq.github.io/MysteryBox2/message.html';
 }
+
  
 
   </script>
