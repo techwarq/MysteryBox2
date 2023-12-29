@@ -1,3 +1,4 @@
+<!-- message.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,19 +24,19 @@
     </div>
 
     <script>
-        // Extract message from the query parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const message = urlParams.get('messageInput');
+        // Retrieve the message from sessionStorage
+        const submittedMessage = sessionStorage.getItem('submittedMessage');
 
         // Display the message
         const messageElement = document.getElementById('message');
-        if (message) {
-            // Decode the message and set it in the element
-            const decodedMessage = decodeURIComponent(message);
-            messageElement.innerText = decodedMessage;
+        if (submittedMessage) {
+            messageElement.innerText = submittedMessage;
         } else {
             messageElement.innerText = 'No message available.';
         }
+
+        // Optional: Clear the stored message to avoid displaying it again on page reload
+        sessionStorage.removeItem('submittedMessage');
     </script>
 </body>
 </html>
