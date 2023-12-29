@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Message</title>
+</head>
+<body>
+    <div class="present">
+        <div class="lid">
+          <span></span>
+          <div class="box-bowtie"></div>
+        </div>
+
+        <div class="message" id="message"></div>
+        
+        <div class="box">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <script>
+        // Extract message from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('messageInput');
+
+        // Display the message
+        const messageElement = document.getElementById('message');
+        if (message) {
+            // Decode the message and set it in the element
+            const decodedMessage = decodeURIComponent(message);
+            messageElement.innerText = decodedMessage;
+        } else {
+            messageElement.innerText = 'No message available.';
+        }
+    </script>
+</body>
+</html>
