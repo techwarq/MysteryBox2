@@ -24,15 +24,17 @@
     </div>
 
     <script>
-        // Retrieve the message from sessionStorage
-        const submittedMessage = sessionStorage.getItem('submittedMessage');
+ const submittedMessage = localStorage.getItem('submittedMessage');
+const messageElement = document.getElementById('message');
 
-        // Display the message
-        const messageElement = document.getElementById('message');
-        if (submittedMessage) {
-            messageElement.innerText = submittedMessage;
-        } else {
-            messageElement.innerText = 'No message available.';
+if (submittedMessage) {
+  messageElement.innerText = submittedMessage;
+} else {
+  messageElement.innerText = 'No message available.';
+}
+
+// Optionally, clear the stored message to avoid displaying it again on page reload
+localStorage.removeItem('submittedMessage');
         }
 
        
