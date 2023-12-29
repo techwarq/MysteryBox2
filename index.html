@@ -37,6 +37,7 @@
     function passMessage() {
       const messageInput = document.getElementById('messageInput').value;
       sessionStorage.setItem('submittedMessage', messageInput);
+       window.location.href = `https://techwarq.github.io/MysteryBox2/message.html?messageInput=${encodeURIComponent(messageInput)}`;
     }
   </script>
 </body>
