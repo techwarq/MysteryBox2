@@ -16,9 +16,9 @@
     </div>
     <div class="promo">
       <textarea id="messageInput" placeholder="Write your message"></textarea>
-      <div class="qrCodeBox" id="qrCodeBox"></div>
+      <div class="qrCodeBox" id="qrCodeBox" onchange="passMessage()"></div>
       <!-- Change the button to a link with an onclick event -->
-      <a href="#" class="submit" id="generateLink" onclick="passMessage()">Submit</a>
+      <a href="#" class="submit" id="generateLink" onclick="generateQRCode()">Submit</a>
     </div>
     <div class="box">
       <span></span>
@@ -35,6 +35,7 @@
     function passMessage() {
       const messageInput = document.getElementById('messageInput').value;
       sessionStorage.setItem('submittedMessage', messageInput);
+      window.location.href = 'https://techwarq.github.io/MysteryBox2/message.html';
      
     }
   </script>
