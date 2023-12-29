@@ -36,22 +36,9 @@
 function passMessage() {
   const messageInput = document.getElementById('messageInput').value;
   sessionStorage.setItem('submittedMessage', messageInput);
-
-  const linkUrl = 'https://techwarq.github.io/MysteryBox2/message.html';
-
-  // Call the function to print the clickable link
-  printClickableLink(linkUrl);
+  window.location.href = 'https://techwarq.github.io/MysteryBox2/message.html';
 }
-
-function printClickableLink(url) {
-  // Create a new anchor element
-  const linkElement = document.createElement('a');
-  linkElement.href = url;
-  linkElement.textContent = 'Click me'; // Set the text content of the link
-
-  // Append the link to the container on the page
-  
-}
+ 
 
   </script>
 </body>
