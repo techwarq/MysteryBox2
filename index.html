@@ -31,16 +31,16 @@
   <!-- Include your script.js file -->
   <script src="script.js"></script>
   <script>
-    // Function to store the message and redirect to message.html
-    // Function to store the message and redirect to message.html
-function passMessage() {
-  const messageInput = document.getElementById('messageInput').value;
-  localStorage.setItem('submittedMessage', messageInput);
-  window.postMessage = 'https://techwarq.github.io/MysteryBox2/message.html';
-}
+    function passMessage() {
+      const messageInput = document.getElementById('messageInput').value;
+      sessionStorage.setItem('submittedMessage', messageInput);
 
- 
-
+      // Use window.postMessage to communicate with other windows or tabs
+      window.postMessage({ type: 'message', data: messageInput }, '*');
+      
+      // Optionally, you can continue with the window.location.href as before
+      // window.location.href = 'https://techwarq.github.io/MysteryBox2/message.html';
+    }
   </script>
 </body>
 </html>
