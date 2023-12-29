@@ -127,6 +127,20 @@ body {
     -webkit-transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
             transform: translateX(0%) rotate(90deg) skew(10deg, 10deg);
   }
-
+.message{
+    font-size: 30px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    position: relative;
+    height: 0;
+    top: 10px;
+    transition: all ease-out 0.7s;
+}
+.present:hover .message{
+    top: -80px;
+    
+  }
+  
   
   
